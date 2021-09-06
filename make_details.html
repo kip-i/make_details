@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charest="UTF-8" />
+    <title>details作成</title>
+</head>
+
+<body>
+    <input id=en tabindex="1">
+    <input id=ja tabindex="2">
+    <button onclick="make()" id=decision tabindex="3">決定</button>
+    <div id=result></div>
+</body>
+<script>
+    var en = document.getElementById('en');
+    var ja = document.getElementById('ja');
+    var detail = document.createElement('details');
+    var p = document.createElement('p');
+    var result = document.getElementById('result');
+    function make() {
+        var txt = document.createTextNode('<details>\n    <summary>&nbsp;' + en.value + '</summary>' + ja.value + '\n</details>');
+        p.appendChild(txt);
+        result.appendChild(p);
+        en.value = '';
+        ja.value = '';
+
+    }
+</script>
+
+</html>
